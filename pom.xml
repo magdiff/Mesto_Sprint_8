@@ -16,22 +16,23 @@
         <allure.version>2.24.0</allure.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.10.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-
-        <!-- JUnit 5 Bom: заставляет все модули JUnit использовать одну версию -->
-        <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>junit-bom</artifactId>
-            <version>5.10.0</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-
         <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.10.0</version>
+            <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
 
@@ -78,14 +79,11 @@
                         <artifactId>aspectjweaver</artifactId>
                         <version>${aspectj.version}</version>
                     </dependency>
-
                     <dependency>
                         <groupId>org.slf4j</groupId>
                         <artifactId>slf4j-simple</artifactId>
                         <version>1.7.36</version>
-
                     </dependency>
-
                 </dependencies>
             </plugin>
             <plugin>
@@ -98,5 +96,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
