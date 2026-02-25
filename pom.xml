@@ -9,9 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>11</maven.compiler.release>
         <aspectj.version>1.9.7</aspectj.version>
         <allure.version>2.24.0</allure.version>
     </properties>
@@ -60,6 +59,14 @@
 
     <build>
         <plugins>
+            <!-- Плагин компилятора -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+
+            <!-- Плагин запуска тестов -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -86,6 +93,8 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <!-- Плагин Allure -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
